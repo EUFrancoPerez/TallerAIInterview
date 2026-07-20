@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "project-manager": {
+      "command": "uv",
+      "args": ["run", "server.py"],
+      "cwd": "/absolute/path/to/mcp-project-manager"
+    }
+  }
+}
