@@ -1,0 +1,16 @@
+[project]
+name = "mcp-project-manager"
+version = "0.1.0"
+description = "Custom MCP server exposing project-management tools (Lab 01)"
+requires-python = ">=3.11"
+dependencies = [
+    "mcp>=1.0.0",
+    "aiosqlite>=0.20.0",
+    "starlette>=0.37.0",
+    "uvicorn>=0.29.0",
+    "sse-starlette>=2.1.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
