@@ -1,0 +1,35 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run *)",
+      "Bash(npx *)",
+      "Bash(git *)",
+      "Edit(/src/**)",
+      "Edit(/tests/**)",
+      "Read(**)"
+    ],
+    "deny": [
+      "Bash(rm -rf *)",
+      "Bash(git push --force *)",
+      "Edit(/config/production.*)"
+    ]
+  },
+  "hooks": {
+    "preToolUse": [
+      { "matcher": "Edit", "command": "echo 'About to edit a file'" }
+    ],
+    "postToolUse": [
+      { "matcher": "Bash", "command": ".claude/hooks/post-edit-format.sh" }
+    ],
+    "notification": [
+      { "command": ".claude/hooks/notify.sh" }
+    ]
+  },
+  "mcpServers": {
+    "project-manager": {
+      "command": "uv",
+      "args": ["run", "server.py"],
+      "cwd": "./mcp-project-manager"
+    }
+  }
+}
